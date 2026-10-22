@@ -1,0 +1,7 @@
+# Environment files and secret keys
+.env
+
+# Local data folders and virtual environment
+venv/
+data/processed/
+__pycache__/

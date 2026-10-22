@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_flights
+    description: "Silver layer: Cleaned and explicitly typed flight data over Portugal."
+    columns:
+      - name: icao24
+        description: "Unique ICAO 24-bit aircraft transponder address."
+        tests:
+          - not_null
+
+  - name: fct_flights_by_country
+    description: "Gold layer: Aggregated flight metrics and unique aircraft counts grouped by country of origin."
+    columns:
+      - name: origin_country
+        description: "Country of origin where the aircraft is registered."
+        tests:
+          - not_null
