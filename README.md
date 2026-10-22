@@ -8,6 +8,7 @@ An end-to-end Data Engineering pipeline extracting live flight telemetry over Po
 
 The platform follows the **Medallion Architecture** to ensure data quality, explicit schema enforcement, and clear data lineage:
 
+```text
                   ┌───────────────────────┐
                   │  OpenSky Network API  │
                   └───────────┬───────────┘
@@ -29,6 +30,7 @@ The platform follows the **Medallion Architecture** to ensure data quality, expl
 │ GOLD LAYER: fct_flights_by_country (dbt View)            │
 │ Business metrics: active aircrafts & flights by country  │
 └──────────────────────────────────────────────────────────┘    
+```
 
 ## 🛠️ Tech Stack
 
