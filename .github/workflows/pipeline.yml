@@ -33,7 +33,7 @@ jobs:
           AWS_BUCKET_NAME: ${{ secrets.AWS_BUCKET_NAME }}
         run: python main.py
 
-      - name: Run dbt models & tests
+      - name: Run dbt Transformations & Tests
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -41,5 +41,5 @@ jobs:
           AWS_BUCKET_NAME: ${{ secrets.AWS_BUCKET_NAME }}
         run: |
           cd analytics
-          dbt run
-          dbt test
+          dbt run --profiles-dir .
+          dbt test --profiles-dir .
